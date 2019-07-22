@@ -21,6 +21,11 @@ public class Job
 	 String designation;
 	 String description;
 	 String companyName;
+     String location;
+	 
+	 int ctc;
+	 Date lastdateforApply;
+	 String skills;
 	 public int getJobId() {
 		return jobId;
 	}
@@ -69,9 +74,5 @@ public class Job
 	public void setSkills(String skills) {
 		this.skills = skills;
 	}
-	String location;
-	 
-	 int ctc;
-	 Date lastdateforApply;
-	 String skills;
+	
 }
