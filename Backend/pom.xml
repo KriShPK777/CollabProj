@@ -46,7 +46,6 @@
     <artifactId>spring-tx</artifactId>
     <version>4.3.18.RELEASE</version>
 </dependency>
-
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
 <dependency>
     <groupId>org.springframework</groupId>

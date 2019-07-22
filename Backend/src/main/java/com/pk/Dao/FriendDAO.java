@@ -1,0 +1,17 @@
+package com.pk.Dao;
+
+import java.util.List;
+
+import com.pk.Model.Friend;
+import com.pk.Model.UserDetail;
+
+public interface FriendDAO 
+{
+	public List<Friend> showPendingFriendRequests(String username);
+	public List<Friend> showFriendList(String username);
+	public List<UserDetail> showSuggestedFriends (String username);
+	
+	public boolean sendFriendRequest(Friend friend);
+	public boolean deleteFriendRequest(int friendId);
+	public boolean acceptFriendRequest(int friendId);
+}
