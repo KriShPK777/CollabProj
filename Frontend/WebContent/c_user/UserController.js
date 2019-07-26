@@ -1,4 +1,4 @@
-myApp.controller("UserController",function($scope,$http,$location,$rootScope,$cookieStore) {	
+myApp.controller("UserController", function($scope,$http,$location,$rootScope,$cookieStore) {	
        $scope.userDetail=("username":"","password":"","name":"","emailId":"","mobileNo":"","address":"","role":"ROLE_USER");
        
        $rootScope.currentUser;
@@ -31,6 +31,8 @@ myApp.controller("UserController",function($scope,$http,$location,$rootScope,$co
         	alert("User Name and Password does not Match");
         }};
       }
+      
+      
 
 
 	
