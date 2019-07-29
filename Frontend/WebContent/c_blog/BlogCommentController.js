@@ -1,4 +1,4 @@
-myApp.controller("BlogCommentController",function($scope,$http,$location,$rootScope))
+myApp.controller("BlogCommentController",function($scope,$http,$location,$rootScope)
 {
 	$scope.friend={"blogId":0,"blogname":"","username":"","status":"","blogContent":"","createDate":"","likes":0,"dislikes":0};
 	
@@ -15,7 +15,7 @@ myApp.controller("BlogCommentController",function($scope,$http,$location,$rootSc
 	 	   .then(function(response)
 	 	   {
 	 		  $scope.blogComments=response.data;
-	 	   }};
+	 	   });
 		
 	}
       function blogInfo()
@@ -27,7 +27,7 @@ myApp.controller("BlogCommentController",function($scope,$http,$location,$rootSc
 	 	   .then(function(response)
 	 	   {
 	 		  $scope.blog=response.data;
-	 	   }};
+	 	   });
     	  
       }
       $scope.addComment=function()
@@ -43,10 +43,11 @@ myApp.controller("BlogCommentController",function($scope,$http,$location,$rootSc
     	       bloginfo();
     	      
     	       
-	 	   }};
+	 	   });
       }
       loadAllComments();
       bloginfo();
      
-	}};
+
+	});
 	

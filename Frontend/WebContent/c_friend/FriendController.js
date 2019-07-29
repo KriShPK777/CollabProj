@@ -1,4 +1,4 @@
-myApp.controller("FriendController",function($scope,$http,$location,$rootScope))
+myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 {
 	$scope.friend={"friendId":0,"username":"","friendusername":"","status":""};
 	
@@ -18,7 +18,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope))
  		  $scope.friendList=response.data;
  	   },function(errresponse){
  	      alert("Problem Occured");
-	   }};
+	   });
 	}
 
    function showpendingFriendList()
@@ -31,7 +31,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope))
  		  $scope.pendingFriendList=response.data;
  	   },function(errresponse){
  	      alert("Problem Occured");
-	   }};
+	   });
 	}
 	
 	$scope.sendFriendRequest=function(friendname)
@@ -50,7 +50,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope))
  		 showFriendList();
  	   },function(errresponse){
  	      alert("Error Occured");
- 	   }};
+ 	   });
 	}
 	$scope.accept=function(friendId)
 	{
@@ -64,7 +64,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope))
 	 		 showFriendList();
 	 	   },function(errresponse){
 	 	      alert("Error Occured");
-	 	   }};
+	 	   });
 	 }
 	 
 	 $scope.unfriend=function(friendId)
@@ -79,7 +79,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope))
 		 		 showFriendList();
 		 	   },function(errresponse){
 		 	      alert("Error Occured");
-		 	   }};
+		 	   });
 		 }
 		 
 		 showpendingFriendList();
@@ -88,10 +88,10 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope))
 		 
 	 
 		
-	}
+
   
-    }
+});
 
 	
 	
-	}
+	

@@ -18,7 +18,7 @@ myApp.config(function($routeProvider){
                   .when("/publishJob", {templateUrl:"c_job/PublishJob.html"})
                   .when("/showJobs", {templateUrl:"c_job/ShowJobs.html"})
                   .when("/chat", {templateUrl:"c_chat/Chat.html"});
-}};
+});
 
 myApp.run(function($rootScope,$cookieStore)
 {
@@ -28,4 +28,4 @@ myApp.run(function($rootScope,$cookieStore)
             	 {
             	  $rootScope.currentUser=$cookieStore.get('userDetail');
             	 }
-}};
+});

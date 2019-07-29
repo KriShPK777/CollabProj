@@ -1,4 +1,4 @@
-myApp.controller("BlogCommentController",function($scope,$http,$location,$rootScope))
+myApp.controller("BlogCommentController",function($scope,$http,$location,$rootScope)
 {
 	$scope.friend={"blogId":0,"blogname":"","username":"","status":"","blogContent":"","createDate":"","likes":0,"dislikes":0};
 	
@@ -21,7 +21,7 @@ myApp.controller("BlogCommentController",function($scope,$http,$location,$rootSc
 		     showAllBlogs();
 	 	  },function(errresponse){
     	      alert("Error Occured While Adding Blog");
-    	   }};
+    	   });
 	  }
  $scope.showComments=function()
 {
@@ -43,7 +43,7 @@ $scope.updateBlog=function()
 		   $location.path("/showBlog");
 	   },function(errresponse){
  	      alert("Error Occured While Updating Blog");
- 	   }};
+ 	   });
 	  }
 	  $scope.incrementLikes=function(blogId)
 	  {
@@ -56,7 +56,7 @@ $scope.updateBlog=function()
 			   showAllBlogs();
 		   },function(errresponse){
 		 	      alert("Error Occured While Incrementing Likes of the Blog");
-		 	   }};
+		 	   });
 			  }
 			  $scope.incrementDisLikes=function(blogId)
 			  {
@@ -69,7 +69,7 @@ $scope.updateBlog=function()
 					   showAllBlogs();
 				   },function(errresponse){
 				 	      alert("Error Occured While Incrementing DisLikes of the Blog");
-				 	   }};
+				 	   });
 					  }
 			  $scope.deleteBlog=function(blogId)
 			  {
@@ -84,7 +84,7 @@ $scope.updateBlog=function()
 			  	   },function(errresponse){
 			   	      alert("Error Occured While Updating Blog");
 			   	   showAllBlogs();
-			   	   }};
+			   	   });
 			  	  }
 			  	 $scope.editBlog=function(blogId)
 				  {
@@ -101,7 +101,7 @@ $scope.updateBlog=function()
 					   },function(errresponse){
 					   	      alert("Error Occured While Editing the Blog");
 					   	   showAllBlogs();
-					   }};
+					   });
 				  	  }
 				  	  $scope.accept=function(blogId)
 				  	  {
@@ -110,7 +110,7 @@ $scope.updateBlog=function()
 				 	   .then(function(response)
 				 	   {
 					     alert("Blog Approved");
-				  	  }};
+				  	  });
 				  	  }
 				  	  
 				  	 $scope.reject=function(blogId)
@@ -120,7 +120,7 @@ $scope.updateBlog=function()
 				 	   .then(function(response)
 				 	   {
 					     alert("Blog Rejected");
-				  	  }};
+				  	  });
 				  	  }
 				  	  function showAllBlogs()
 				  	  {
@@ -132,13 +132,12 @@ $scope.updateBlog=function()
 				 	      },function(errresponse){
 					   	      alert("Error Occured While Retrieving the Blog");
 					  		
-				  	    }};
+				  	    });
 				 
 				  	    }
 				  	  showAllBlogs();
 			  	  
-	  }
+	  
 
 		   
-	   }
-}
+	   });

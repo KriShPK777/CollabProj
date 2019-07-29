@@ -18,7 +18,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope)
 	   },function(errresponse)
 	   {
 		   alert("Error Occured while Posting Job");
-   	  }};
+   	  });
 	 }
 		
-}};
+});

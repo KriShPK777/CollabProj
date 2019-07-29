@@ -1,4 +1,5 @@
-myApp.controller("UserController", function($scope,$http,$location,$rootScope,$cookieStore) {	
+myApp.controller("UserController", function($scope,$http,$location,$rootScope,$cookieStore) 
+{	
        $scope.userDetail=("username":"","password":"","name":"","emailId":"","mobileNo":"","address":"","role":"ROLE_USER");
        $rootScope.userDetail=("username":"","password":"","name":"","emailId":"","mobileNo":"","address":"","role":"ROLE_USER");
        $rootScope.currentUser;
@@ -12,7 +13,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope,$c
     		   alert("User Added");
     	   },function(errresponse){
     	      alert("Problem Occured");
-    	   }};
+    	   });
 	  }
 
       $scope.checkUser=function()
@@ -29,7 +30,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope,$c
         },function(errresponse)
         {
         	alert("User Name and Password does not Match");
-        }};
+        });
       }
       $scope.editUser=function()
       {
@@ -44,7 +45,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope,$c
         },function(errresponse)
         {
         	alert("Problem Occured");
-        }};
+        });
       }
       
       $scope.updateProfile=function()
@@ -59,7 +60,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope,$c
         {
         	 alert(errorresponse.data); 		
         	 alert(errorresponse.statusText); 		
-        }};
+        });
       }
       $scope.logout=function()
       {
@@ -71,6 +72,5 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope,$c
     		  $location.path("/login");        
       }
 
-
 	
-}};
+});
