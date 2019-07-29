@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,7 +38,7 @@ public class BlogCommentRestController
 	    }
 	     
 
-	    @PostMapping(value="/addComment")
+	    @PostMapping(value="/addComment",produces=MediaType.TEXT_PLAIN_VALUE)
 	    public ResponseEntity<String> addComment(@RequestBody BlogComment comment)
 	    {
 	    	if(blogCommentDAO.addComment(comment))
@@ -49,4 +50,22 @@ public class BlogCommentRestController
 	    		return new  ResponseEntity<String>("Problem Occured While Adding Comment",HttpStatus.NOT_FOUND);
 	    	}
 	    }
+
+	    @GetMapping(value="/deleteComment/{commentId}",produces=MediaType.TEXT_PLAIN_VALUE)
+	    public ResponseEntity<String> deleteComment(@PathVariable("commentId")int commentId)
+	    {
+	    	BlogComment comment=blogCommentDAO.getBlogComment(commentId);	    	
+	    	if(blogCommentDAO.deleteComment(comment))
+	    	{
+	    		return new  ResponseEntity<String>("Blog Comment Deleted Successfully",HttpStatus.OK);
+	    	}
+	    	else
+	    	{
+	    		return new  ResponseEntity<String>("Problem Occured While Deleting Blog Comment",HttpStatus.NOT_FOUND);
+	    	}
+	    }
+	     
+
+	    
+	    
 }

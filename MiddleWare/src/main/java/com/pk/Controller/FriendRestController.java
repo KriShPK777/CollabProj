@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,7 +49,7 @@ public class FriendRestController
 	    		return new  ResponseEntity<List<Friend>>(friendList,HttpStatus.NOT_FOUND);
 	    	}
 	    }
-	 @PostMapping(value="/sendFriendRequest")
+	 @PostMapping(value="/sendFriendRequest",produces=MediaType.TEXT_PLAIN_VALUE)
 	    public ResponseEntity<String> sendFriendRequest(@RequestBody Friend friend)
 	    {
 	    	if(friendDAO.sendFriendRequest(friend))
@@ -60,7 +61,7 @@ public class FriendRestController
 	    		return new  ResponseEntity<String>("Problem Occured While Adding Friend Request",HttpStatus.NOT_FOUND);
 	    	}
 	    }
-	 @GetMapping(value="/deleteFriendRequest/{friendId}")
+	 @GetMapping(value="/deleteFriendRequest/{friendId}",produces=MediaType.TEXT_PLAIN_VALUE)
 	    public ResponseEntity<String> deleteFriendRequest(@PathVariable("friendId")int friendId)
 	    {    	
 	    	if(friendDAO.deleteFriendRequest(friendId))

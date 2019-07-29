@@ -4,12 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table
 public class UserDetail 
 {
 	 @Id
 	 String username;
+	 @JsonFormat(shape= JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	 String password;
 	 String name;
 	 String emailId;

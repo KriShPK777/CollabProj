@@ -3,6 +3,7 @@ package com.pk.Controller;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,7 @@ public class UserRestController
 	  UserDAO userDAO;
 	
 		
-	@PostMapping(value="/adduser")
+	@PostMapping(value="/adduser",produces=MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> adduser(@RequestBody UserDetail user)
     {
 		user.setRole("ROLE_USER");
@@ -48,7 +49,7 @@ public class UserRestController
     		return new  ResponseEntity<UserDetail>(tempUser,HttpStatus.NOT_FOUND);
     	}
     }
-	@PostMapping(value="/updateuser")
+	@PostMapping(value="/updateuser",produces=MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> updateUser(@RequestBody UserDetail user)
     {
 		UserDetail tempUser=userDAO.getUserDetail(user.getUsername().toString());

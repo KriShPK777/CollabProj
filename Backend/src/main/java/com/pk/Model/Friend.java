@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table
 @SequenceGenerator(name="friendidseq",sequenceName="friendid_seq")
@@ -15,7 +17,7 @@ public class Friend
 	@Id
 	 @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="friendidseq")
 	 int friendId;
-	
+	 @JsonFormat(shape= JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	 String username;
 	 String friendusername;
 	 String status;
