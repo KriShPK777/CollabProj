@@ -1,8 +1,8 @@
-myApp.controller("UserController", function($scope,$http,$location,$rootScope,$cookieStore) 
+myApp.controller("UserController",function($scope,$http,$location,$rootScope,$cookieStore) 
 {	
-       $scope.userDetail=("username":"","password":"","name":"","emailId":"","mobileNo":"","address":"","role":"ROLE_USER");
-       $rootScope.userDetail=("username":"","password":"","name":"","emailId":"","mobileNo":"","address":"","role":"ROLE_USER");
-       $rootScope.currentUser;
+ $scope.userDetail={"username":"","password":"","name":"","emailId":"","mobileNo":"","address":"","role":"ROLE_USER"};
+ $rootScope.userDetail={"username":"","password":"","name":"","emailId":"","mobileNo":"","address":"","role":"ROLE_USER"};
+ $rootScope.currentUser;
        		
 	  $scope.register=function()
 	  {
