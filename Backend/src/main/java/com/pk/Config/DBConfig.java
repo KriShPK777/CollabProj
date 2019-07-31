@@ -45,12 +45,12 @@ public class DBConfig
     	
     	LocalSessionFactoryBuilder factory=new LocalSessionFactoryBuilder(this.getOracleDataSource());
     	factory.addProperties(hibernateProperties);
-    	
+    	/*
     	factory.addAnnotatedClass(Blog.class);
     	factory.addAnnotatedClass(BlogComment.class);
     	factory.addAnnotatedClass(Job.class);
     	factory.addAnnotatedClass(UserDetail.class);
-    	factory.addAnnotatedClass(Friend.class);
+    	factory.addAnnotatedClass(Friend.class);*/
     	
     	SessionFactory sessionFactory=factory.buildSessionFactory();
     	System.out.println("==========Created SessionFactory========");
@@ -58,7 +58,7 @@ public class DBConfig
     	return sessionFactory;
     		
     }
-    @Bean
+   
     public HibernateTransactionManager getHibernateTransactionManager(SessionFactory sessionFactory)
     {
     	System.out.println("======== Hibernate Transaction Manager==========");

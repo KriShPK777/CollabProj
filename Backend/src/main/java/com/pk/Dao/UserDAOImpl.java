@@ -35,7 +35,7 @@ public class UserDAOImpl implements UserDAO
 	public UserDetail getUserDetail(String username) 
 	{
 		Session session=sessionFactory.openSession();
-		UserDetail user=session.get(UserDetail.class, username);
+		UserDetail user=(UserDetail) session.get(UserDetail.class, username);
 		session.close();
 		return user;
 	}
@@ -44,7 +44,7 @@ public class UserDAOImpl implements UserDAO
 	public UserDetail checkUserCredential(UserDetail user) 
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from UserDetail where username=:uname and password=:passwd");
+		Query query=(Query) session.createQuery("from UserDetail where username=:uname and password=:passwd");
 		query.setParameter("uname", user.getUsername());
 		query.setParameter("passwd", user.getPassword());
 		UserDetail tempUser=(UserDetail)query.list().get(0);

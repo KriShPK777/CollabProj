@@ -66,7 +66,7 @@ public class BlogDAOImpl implements BlogDAO
 	public List<Blog> listBlogs() 
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from Blog");
+		Query query=(Query) session.createQuery("from Blog");
 		List<Blog> listBlogs=query.list();
 		session.close();
 		return listBlogs;
@@ -76,7 +76,7 @@ public class BlogDAOImpl implements BlogDAO
 	public Blog getBlog(int blogId) 
 	{
 		Session session=sessionFactory.openSession();
-		Blog blog=session.get(Blog.class, blogId);
+		Blog blog=(Blog) session.get(Blog.class, blogId);
 		session.close();
 		return blog;
 	}

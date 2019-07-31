@@ -51,7 +51,7 @@ public class BlogCommentDAOImpl implements BlogCommentDAO
 	public BlogComment getBlogComment(int blogCommentId) 
 	{
 		Session session=sessionFactory.openSession();
-		BlogComment blogComment=session.get(BlogComment.class, blogCommentId);
+		BlogComment blogComment=(BlogComment) session.get(BlogComment.class, blogCommentId);
 		session.close();
 		return blogComment;
 	}
@@ -60,7 +60,7 @@ public class BlogCommentDAOImpl implements BlogCommentDAO
 	public List<BlogComment> listBlogComments(int blogId) 
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from BlogComment");
+		Query query=(Query) session.createQuery("from BlogComment");
 		query.setParameter("blogid", blogId);
 		List<BlogComment> commentList=query.list();
 		return commentList;

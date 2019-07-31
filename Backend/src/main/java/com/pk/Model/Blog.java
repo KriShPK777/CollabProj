@@ -17,8 +17,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Blog 
 {
       @Id
-      int blogId;
       @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="blogidseq")
+      int blogId;        
       String blogName;
       String blogContent;
       String username;

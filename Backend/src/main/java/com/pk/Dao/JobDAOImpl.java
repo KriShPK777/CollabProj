@@ -58,7 +58,7 @@ public class JobDAOImpl implements JobDAO
 	public Job getJobDetails(int jobId) 
 	{
 		Session session=sessionFactory.openSession();
-		Job job=session.get(Job.class, jobId);
+		Job job=(Job) session.get(Job.class, jobId);
 		session.close();
 		return job;
 	}

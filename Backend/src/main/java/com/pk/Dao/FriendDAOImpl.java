@@ -25,7 +25,7 @@ public class FriendDAOImpl implements FriendDAO
 	{
 		
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from friend where friendusername=:funame) and status='P'");
+		Query query=(Query) session.createQuery("from friend where friendusername=:funame) and status='P'");
 		query.setParameter("funame", username);
 		List<Friend> pendingFriendList=(List<Friend>)query.list();
 		return pendingFriendList;
@@ -35,7 +35,7 @@ public class FriendDAOImpl implements FriendDAO
 	public List<Friend> showFriendList(String username) 
 	{
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from friend where (username=:uname or friendusername=:funame) and status='A'");
+		Query query=(Query) session.createQuery("from friend where (username=:uname or friendusername=:funame) and status='A'");
 		query.setParameter("uname", username);
 		query.setParameter("funame", username);
 		List<Friend> friendList=(List<Friend>)query.list();
@@ -46,14 +46,14 @@ public class FriendDAOImpl implements FriendDAO
 	public List<UserDetail> showSuggestedFriends(String username) 
 	{
 		Session session=sessionFactory.openSession();
-	    Query sqlquery=session.createNativeQuery("select username UserDetail where username not in(select friendusername from Friend where username='"+username+"') where (friendusername='john' and status='A') and (username!='sam'");
+	    Query sqlquery=(Query) session.createQuery("select username UserDetail where username not in(select friendusername from Friend where username='"+username+"') where (friendusername='john' and status='A') and (username!='sam'");
 		List<String> listUsers=(List<String>)sqlquery.list();
 		
 		ArrayList<UserDetail> listUserDetail=new ArrayList<UserDetail>();
 		int count=0;
 		while(count<listUsers.size())
 		{
-			UserDetail user=session.get(UserDetail.class, listUsers.get(count).toString().trim());
+			UserDetail user=(UserDetail) session.get(UserDetail.class, listUsers.get(count).toString().trim());
 			listUserDetail.add(user);
 			count++;
 		} 
@@ -82,7 +82,7 @@ public class FriendDAOImpl implements FriendDAO
 		try
 		{
 			Session session=sessionFactory.openSession();
-			Friend friend=session.get(Friend.class, friendId);
+			Friend friend=(Friend) session.get(Friend.class, friendId);
 			session.close();
 			sessionFactory.getCurrentSession().delete(friend);
 			return true;
@@ -99,7 +99,7 @@ public class FriendDAOImpl implements FriendDAO
 		try
 		{
 		Session session=sessionFactory.openSession();
-		Friend friend=session.get(Friend.class, friendId);
+		Friend friend=(Friend) session.get(Friend.class, friendId);
 		session.close();
 		friend.setStatus("A");
 		sessionFactory.getCurrentSession().update(friend);
