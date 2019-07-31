@@ -6,6 +6,8 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+
+
 @Entity
 @Table
 public class UserDetail 

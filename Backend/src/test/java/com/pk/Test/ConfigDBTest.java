@@ -8,7 +8,7 @@ public class ConfigDBTest
   {
 	  
 	  AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-	  context.scan("com.pk.Config");
+	  context.scan("com.pk");
 	  context.refresh();
 	  System.out.println("Configuration Successfull");
   }

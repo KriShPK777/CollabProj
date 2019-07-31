@@ -11,6 +11,8 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+
+
 @Entity
 @Table
 @SequenceGenerator(name="jobidseq",sequenceName="jobid_seq")
