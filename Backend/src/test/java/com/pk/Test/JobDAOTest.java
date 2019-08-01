@@ -23,7 +23,7 @@ public class JobDAOTest
 	  	 context.scan("com.pk");
 	  	 context.refresh();
 	  	 
-	  	 jobDAO=(JobDAO)context.getBean("jobDAO");
+	  	 jobDAO=(JobDAO)context.getBean("JobDAO");
 	  }
 	 @Test
 	 public void addJobTest() 

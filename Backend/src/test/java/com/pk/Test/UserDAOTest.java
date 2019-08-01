@@ -21,7 +21,7 @@ public class UserDAOTest
   	 context.scan("com.pk");
   	 context.refresh();
   	 
-  	 userDAO=(UserDAO)context.getBean("userDAO");
+  	 userDAO=(UserDAO)context.getBean("UserDAO");
   }
   @Test
   public void registeruserTest()

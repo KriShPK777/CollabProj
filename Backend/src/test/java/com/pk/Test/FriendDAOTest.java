@@ -23,7 +23,7 @@ public class FriendDAOTest
 	  	 context.scan("com.pk");
 	  	 context.refresh();
 	  	 
-	  	 friendDAO=(FriendDAO)context.getBean("friendDAO");
+	  	 friendDAO=(FriendDAO)context.getBean("FriendDAO");
 	  }
 	 @Test
 	 public void sendFriendRequestTest()

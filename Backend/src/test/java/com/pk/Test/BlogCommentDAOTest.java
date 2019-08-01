@@ -4,11 +4,14 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.pk.Dao.BlogCommentDAO;
 import com.pk.Model.BlogComment;
+
+
 
 public class BlogCommentDAOTest 
 {
@@ -21,7 +24,7 @@ public class BlogCommentDAOTest
     	 context.scan("com.pk");
     	 context.refresh();
     	 
-    	 blogCommentDAO=(BlogCommentDAO)context.getBean("blogCommentDAO");
+    	 blogCommentDAO=(BlogCommentDAO)context.getBean("BlogCommentDAO");
     }
     @Test
     public void addBlogCommentTest()
@@ -33,8 +36,9 @@ public class BlogCommentDAOTest
     	
     	assertTrue("Problem in Adding a Blog Comment",blogCommentDAO.addComment(comment));
     }
-	
+	@Ignore
     @Test
+    
     public void listBlogcomments()
     {
     	List<BlogComment> listBlogComments=blogCommentDAO.listBlogComments(952);
@@ -48,6 +52,7 @@ public class BlogCommentDAOTest
     	}
     	
     }
+	@Ignore
     @Test
     public void deleteBlogCommentTest()
     {

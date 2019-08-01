@@ -20,7 +20,7 @@ public class BlogDAOTest
     	 context.scan("com.pk");
     	 context.refresh();
     	 
-    	 blogDAO=(BlogDAO)context.getBean("blogDAO");
+    	 blogDAO=(BlogDAO)context.getBean("BlogDAO");
      }
      
      @Test
