@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pk.Dao.FriendDAO;
-import com.pk.Model.BlogComment;
 import com.pk.Model.Friend;
 import com.pk.Model.UserDetail;
 
