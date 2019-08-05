@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("CollProj.MiddleWare")
+@ComponentScan("com.pk")
 public class WebResolver 
 {
     @Bean
