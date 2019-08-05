@@ -20,7 +20,7 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 	protected Class<?>[] getRootConfigClasses() 
 	{
 		System.out.println("================ Root Config Classes Method============");	
-		return new Class[] {WebResolver.class,DBConfig.class};
+		return new Class[] {WebResolver.class,ConfigDB.class};
 	}
 
 	@Override
