@@ -8,7 +8,7 @@ myApp.controller("UserController",function($scope,$http,$location,$rootScope,$co
 	  {
     	   console.log('I am in Register Function');
     	   
-    	   $http.post('http://localhost:',$scope.userDetail)
+    	   $http.post('http://localhost:8080/Frontend/c_user/UserController.js',$scope.userDetail)
     	   .then(function(response){
     		   alert("User Added");
     	   },function(errresponse){
@@ -21,7 +21,7 @@ myApp.controller("UserController",function($scope,$http,$location,$rootScope,$co
     	  console.log('I am in checkUser Function');
     	  console.log($scope.userDetail);
     	  
-    	  $http.post('http://localhost:',$scope.userDetail)
+    	  $http.post('http://localhost:8080/Frontend/c_user/UserController.js',$scope.userDetail)
     	  .then(function(response)
     	  {
     		  $rootScope.currentUser=response.data;
@@ -36,7 +36,7 @@ myApp.controller("UserController",function($scope,$http,$location,$rootScope,$co
       {
     	  console.log('I am in editUser Function');
        	  
-    	  $http.post('http://localhost:',$rootScope.currentUser.username)
+    	  $http.post('http://localhost:8080/Frontend/c_user/UserController.js',$rootScope.currentUser.username)
     	  .then(function(response)
     	  {
     		  $rootScope.userDetail=response.data;
@@ -52,7 +52,7 @@ myApp.controller("UserController",function($scope,$http,$location,$rootScope,$co
       {
     	  console.log('I am in Update Profile Function');
        	  
-    	  $http.post('http://localhost:',$rootScope.userDetail)
+    	  $http.post('http://localhost:8080/Frontend/c_user/UserController.js',$rootScope.userDetail)
     	  .then(function(response)
     	  {
     		  alert(response.data); 		  

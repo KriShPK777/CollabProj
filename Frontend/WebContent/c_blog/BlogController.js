@@ -14,7 +14,7 @@ myApp.controller("BlogCommentController",function($scope,$http,$location,$rootSc
 			
 		  $scope.blogComment.username=$rootScope.currentUser.username;
 		  
-	 	   $http.get('http://localhost:',$rootScope.blog)
+	 	   $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js',$rootScope.blog)
 	 	   .then(function(response)
 	 	   {
 		     alert("Blog Added");
@@ -36,7 +36,7 @@ $scope.updateBlog=function()
 	  console.log('I am in Update Blog');
 	  $rootScope.blog1.username=$rootScope.currentUser.username;
 	  
-	  $http.get('http://localhost:',$rootScope.blog1)
+	  $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js',$rootScope.blog1)
 	   .then(function(response)
 	   {
 		   alert("Blog Added");
@@ -49,7 +49,7 @@ $scope.updateBlog=function()
 	  {
 		  console.log('I am in Increment Likes');
 		  
-		  $http.get('http://localhost:'+blogId)
+		  $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js'+blogId)
 		   .then(function(response)
 		   {
 			   alert("--Thank You for Liking the Blog");
@@ -62,7 +62,7 @@ $scope.updateBlog=function()
 			  {
 				  console.log('I am in Increment DisLikes');
 				  
-				  $http.get('http://localhost:'+blogId)
+				  $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js'+blogId)
 				   .then(function(response)
 				   {
 					   alert("--OOPs We will try to Improve.Thanks for the Feedback!!!");
@@ -75,7 +75,7 @@ $scope.updateBlog=function()
 			  {
 			  	  console.log('I am in Deleting Blog');
 						  	  
-			  	  $http.get('http://localhost:',$rootScope.blog1)
+			  	  $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js',$rootScope.blog1)
 			  	   .then(function(response)
 			  	   {
 			  		   alert("!!!Blog is Successfully Deleted!!!");
@@ -90,7 +90,7 @@ $scope.updateBlog=function()
 				  {
 					  console.log('I am in Editing Blog');
 					  
-					  $http.get('http://localhost:'+blogId)
+					  $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js'+blogId)
 					   .then(function(response)
 					   {
 						   $rootScope.blog1=response.data;
@@ -106,7 +106,7 @@ $scope.updateBlog=function()
 				  	  $scope.accept=function(blogId)
 				  	  {
 				  		 console.log('I am in Accept Method');
-				  	   $http.get('http://localhost:',$rootScope.blog)
+				  	   $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js',$rootScope.blog)
 				 	   .then(function(response)
 				 	   {
 					     alert("Blog Approved");
@@ -116,7 +116,7 @@ $scope.updateBlog=function()
 				  	 $scope.reject=function(blogId)
 				  	  {
 				  		 console.log('I am in Reject Method');
-				  	   $http.get('http://localhost:',$rootScope.blog)
+				  	   $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js',$rootScope.blog)
 				 	   .then(function(response)
 				 	   {
 					     alert("Blog Rejected");
@@ -125,7 +125,7 @@ $scope.updateBlog=function()
 				  	  function showAllBlogs()
 				  	  {
 				  		 console.log('I am in Show All Blogs');
-					  	   $http.get('http://localhost:')
+					  	   $http.get('http://localhost:8080/Frontend/c_blog/BlogController.js')
 					  	   .then(function(response)
 				 	       {
 					  		 $scope.blogDetail=response.data;

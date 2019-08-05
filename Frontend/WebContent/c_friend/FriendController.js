@@ -13,7 +13,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 		console.log('I am in FriendList');
 		
 
- 	   $http.get('http://localhost:',$rootScope.currentUser.username)
+ 	   $http.get('http://localhost:8080/Frontend/c_friend/FriendController.js',$rootScope.currentUser.username)
  	   .then(function(response){
  		  $scope.friendList=response.data;
  	   },function(errresponse){
@@ -26,7 +26,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 	   console.log('I am in FriendList');
 		
 
- 	   $http.get('http://localhost:',$rootScope.currentUser.username)
+ 	   $http.get('http://localhost:8080/Frontend/c_friend/FriendController.js',$rootScope.currentUser.username)
  	   .then(function(response){
  		  $scope.pendingFriendList=response.data;
  	   },function(errresponse){
@@ -42,7 +42,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 		$scope.friend.friendusername=friendname;
 		
 		   
- 	   $http.post('http://localhost:',$scope.friend)
+ 	   $http.post('http://localhost:8080/Frontend/c_friend/FriendController.js',$scope.friend)
  	   .then(function(response){
  		   alert("Friend Request Sent");
  		  showpendingFriendList();
@@ -56,7 +56,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 	{
 		console.log('I am Accepting Friend Request');
 		
-		   $http.get('http://localhost:',+friendId)
+		   $http.get('http://localhost:8080/Frontend/c_friend/FriendController.js',+friendId)
 	 	   .then(function(response){
 	 		   alert("Friend Request is Accepted");
 	 		  showpendingFriendList();
@@ -71,7 +71,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 		{
 			console.log('I am  UnFriend Request');
 			
-			   $http.get('http://localhost:',+friendId)
+			   $http.get('http://localhost:8080/Frontend/c_friend/FriendController.js',+friendId)
 		 	   .then(function(response){
 		 		   alert("Friend Request is Deleted");
 		 		  showpendingFriendList();

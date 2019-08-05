@@ -11,7 +11,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope)
 		 
 		 
 		  
-   	  $http.post('http://localhost:',$scope.job)
+   	  $http.post('http://localhost:8080/c_friend/FriendController.js',$scope.job)
    	  .then(function(response)
    	  {
    		alert("Job Posted");
