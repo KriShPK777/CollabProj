@@ -1,7 +1,7 @@
 app.service('chatService', function($q , $timeout)
 {
 
-	var base_url="http://localhost:8083/SocialCollRestController";
+	var base_url="http://localhost:8080/MiddleWare/";
 	
 	var service={},listener=$q.defer(),socket={client:null,stomp:null},messageIds=[];
 

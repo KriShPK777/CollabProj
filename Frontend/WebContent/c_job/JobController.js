@@ -11,7 +11,7 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope)
 		 
 		 
 		  
-   	  $http.post('http://localhost:8080/c_friend/FriendController.js',$scope.job)
+   	  $http.post('http://localhost:8080/MiddleWare/addJob',$scope.job)
    	  .then(function(response)
    	  {
    		alert("Job Posted");
@@ -20,5 +20,20 @@ myApp.controller("UserController", function($scope,$http,$location,$rootScope)
 		   alert("Error Occured while Posting Job");
    	  });
 	 }
+	 function showAllJobs()
+	 {
+		 console.log('I am in ShowJobs');
+		 
+		  $http.post('http://localhost:8080/MiddleWare/showAllJobs',$scope.job)
+	   	  .then(function(response)
+	   	  {
+	   		  $scope.jobs=response.data;
+	   		  console.log($scope.jobs);
+	   	 },function(errresponse)
+		   {
+			   alert("Error Occured while Posting Job");
+	   	  });
+		 }
+	   	  showAllJobs();
 		
 });

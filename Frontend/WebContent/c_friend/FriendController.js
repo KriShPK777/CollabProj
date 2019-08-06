@@ -13,7 +13,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 		console.log('I am in FriendList');
 		
 
- 	   $http.get('http://localhost:8080/Frontend/c_friend/FriendController.js',$rootScope.currentUser.username)
+ 	   $http.get('http://localhost:8080/MiddleWare/showFriendList/',$rootScope.currentUser.username)
  	   .then(function(response){
  		  $scope.friendList=response.data;
  	   },function(errresponse){
@@ -26,11 +26,23 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 	   console.log('I am in FriendList');
 		
 
- 	   $http.get('http://localhost:8080/Frontend/c_friend/FriendController.js',$rootScope.currentUser.username)
+ 	   $http.get('http://localhost:8080/MiddleWare/showPendingFriendList/',$rootScope.currentUser.username)
  	   .then(function(response){
  		  $scope.pendingFriendList=response.data;
  	   },function(errresponse){
- 	      alert("Problem Occured");
+ 	      alert("Error Occured");
+	   });
+	}
+   function showsuggestedFriendList()
+   {
+	   console.log('I am in Suggested FriendList');
+		
+
+ 	   $http.get('http://localhost:8080/MiddleWare/showSuggestedFriendList/',$rootScope.currentUser.username)
+ 	   .then(function(response){
+ 		  $scope.pendingFriendList=response.data;
+ 	   },function(errresponse){
+ 	      alert("Error Occured");
 	   });
 	}
 	
@@ -42,7 +54,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 		$scope.friend.friendusername=friendname;
 		
 		   
- 	   $http.post('http://localhost:8080/Frontend/c_friend/FriendController.js',$scope.friend)
+ 	   $http.post('http://localhost:8080/MiddleWare/sendFriendRequest/',$scope.friend)
  	   .then(function(response){
  		   alert("Friend Request Sent");
  		  showpendingFriendList();
@@ -56,7 +68,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 	{
 		console.log('I am Accepting Friend Request');
 		
-		   $http.get('http://localhost:8080/Frontend/c_friend/FriendController.js',+friendId)
+		   $http.get('http://localhost:8080/MiddleWare/acceptFriendRequest/',+friendId)
 	 	   .then(function(response){
 	 		   alert("Friend Request is Accepted");
 	 		  showpendingFriendList();
@@ -71,7 +83,7 @@ myApp.controller("FriendController",function($scope,$http,$location,$rootScope)
 		{
 			console.log('I am  UnFriend Request');
 			
-			   $http.get('http://localhost:8080/Frontend/c_friend/FriendController.js',+friendId)
+			   $http.get('http://localhost:8080/MiddleWare/deleteFriendRequest/',+friendId)
 		 	   .then(function(response){
 		 		   alert("Friend Request is Deleted");
 		 		  showpendingFriendList();
