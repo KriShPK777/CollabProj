@@ -1,11 +1,11 @@
-<div class="container" ng-controller="BlogController">
+<div class="container" ng-controller="ChatController">
 
 <form ng-submit="addMessage()" name="chatMsg">
 <table class="table table-bordered">
 <tr>
 <td>Chat Text</td>
 <input type="text" ng-model="message"/>
-<span class="count" ng-bind="max-message.length"></span>
+<span class="count" ng-bind="max-message.length">140</span>
 </tr>
 <td>
 <button ng-disabled="message.length>140|message.length==0" class="btn btn-info">Send</button>
@@ -16,7 +16,7 @@
 
 	<p ng-repeat="message in messages|orderBy:'time':true">
 		
-		<time>{{message.time | date: 'HH:mm'}}</time>
+		<time>{{message.time|date:'HH:mm'}}</time>
 		<span> {{message.message}}</span>
 	</p>
 	</div>

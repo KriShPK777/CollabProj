@@ -1,5 +1,6 @@
-myApp.controller('chatController', function($scope,$rootScope,chatService)
+myApp.controller('chatController', function($scope,$http,$location,$rootScope,chatService)
 {
+	console.log('Starting Chat Controller');
 	$scope.messages=[];
 	$scope.message="";
 	$scope.max=140;

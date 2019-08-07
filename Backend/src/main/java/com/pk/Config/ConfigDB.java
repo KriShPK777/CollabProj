@@ -34,12 +34,12 @@ public class ConfigDB
 				new LocalSessionFactoryBuilder(getDataSource());
 		Properties hibernateProperties=new Properties();
 		hibernateProperties.setProperty(
-				"hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+				"hibernate.dialect", "org.hibernate.dialect.Oracle11gDialect");
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		System.out.println("----Session Factory Object created-----");
-	Class classes[]=new Class[]{UserDetail.class,Blog.class,BlogComment.class,Job.class,Message.class,OutputMessage.class,ProfilePicture.class,Friend.class};
+	Class classes[]=new Class[]{Blog.class,BlogComment.class,Friend.class,Job.class,Message.class,OutputMessage.class,ProfilePicture.class,UserDetail.class};
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 	@Bean
