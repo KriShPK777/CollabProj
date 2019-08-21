@@ -8,8 +8,8 @@ import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate4.HibernateTransactionManager;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.pk.Model.Blog;
@@ -34,12 +34,14 @@ public class ConfigDB
 				new LocalSessionFactoryBuilder(getDataSource());
 		Properties hibernateProperties=new Properties();
 		hibernateProperties.setProperty(
-				"hibernate.dialect", "org.hibernate.dialect.Oracle11gDialect");
+				"hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		System.out.println("----Session Factory Object created-----");
-	Class classes[]=new Class[]{Blog.class,BlogComment.class,Friend.class,Job.class,Message.class,OutputMessage.class,ProfilePicture.class,UserDetail.class};
+	    Class<?> classes[]=new Class[]{Blog.class,BlogComment.class,Friend.class,Job.class,Message.class,OutputMessage.class,ProfilePicture.class,UserDetail.class};
+		//lsf.addAnnotatedClass(Blog.class);
+		
 	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 	@Bean
@@ -47,8 +49,8 @@ public class ConfigDB
 	    BasicDataSource dataSource = new BasicDataSource();
 	    dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
-	    dataSource.setUsername("krishna");
-	    dataSource.setPassword("Krishna777");
+	    dataSource.setUsername("pk");
+	    dataSource.setPassword("12345");
 	    System.out.println("--Data source created-----");
 	    return dataSource;
 	    

@@ -39,35 +39,35 @@
 </div>
 <ul class="nav navbar-nav">
 <li><a class="active">
-<li><a href="home">Home</a></li>
-<li><a href="login">Login</a></li>
-<li><a href="register">Register</a></li>
-<li><a href="contactus">Contact Us</a></li>
+<li><a href='<c:url value='/home'></c:url>' class="fontSize">Home</a></li>
+<li><a href='<c:url value='/login'></c:url>'Sign In</a></li>
+<li><a href='<c:url value='/register'></c:url'>Sign Up</a></li>
+<li><a href='<c:url value='/contactus'></c:url'>Contact Us</a></li>
 
 <li class="dropdown">
 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Blog<span class="caret"></span></a>
 <ul class="dropdown-menu">
-<li><a class="nav-link" href="#!addBlog" ng-show="currentUser.role--'ROLE_USER'">Add Blog</a>
-<li><a class="nav-link" href="#!manageBlog" ng-show="currentUser.role--'ROLE_ADMIN'">Manage Blog</a>
-<li><a class="nav-link" href="#!showBlog">Show Blog</a>
+<li><a class="nav-link" href='<c:url value='/addBlog' ng-show="currentUser.role--'ROLE_USER'"></c:url>Add Blog</a></c:url>
+<li><a class="nav-link" href='<c:url value='/manageBlog' ng-show="currentUser.role--'ROLE_ADMIN'">Manage Blog</a></c:url>
+<li><a class="nav-link" href='<c:url value='/showBlog'>Show Blog</a></c:url>
 </li>
 </ul>
 
 <li class="dropdown">
 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Job<span class="caret"></span></a>
 <ul class="dropdown-menu">
-<li><a class="nav-link" href="#!addJob" ng-show="currentUser.role--'ROLE_ADMIN'">Publish Job</a>
-<li><a class="nav-link" href="#!showJobs">Show Jobs</a>
+<li><a class="nav-link" href='<c:url value='/addJob' ng-show="currentUser.role--'ROLE_ADMIN'">Publish Job</a></c:url>
+<li><a class="nav-link" href='<c:url value='/showJobs'>Show Jobs</a></c:url>
 </li>
 </ul>
 
-<li ng-hide="currentUser==undefined"><a href="#!updatePic">Update Picture</a>
-<li ng-hide="currentUser==undefined"><a href="#!Friends">Friend</a>
-<li ng-hide="currentUser==undefined"><span ng-controller="UserController"></span><a href="#" ng-click=editUser()">Profile Update</a>
-<li ng-hide="currentUser==undefined"><a href="#!Chat">Friend</a>
+<li> <a href='<c:url value='/updatePic'>Update Picture</a></c:url>
+<li> <a href='<c:url value='/Friends'>Friend</a><c:url>
+<li> <span ng-controller="UserController"></span><a href='<c:url value='/' ng-click=editUser()">Profile Update</a><c:url>
+<li> <a href='<c:url value='/Chat'>Friend</a></c:url>
 </li>
 </a>
-<div class="nav navbar-nav navbar-right" ng-hide="currentUser==undefined">
+<div class="nav navbar-nav navbar-right">
 <font color="white" face="calibri" size="3">
 Welcome 
 <img src="" width="20" height="20"/>

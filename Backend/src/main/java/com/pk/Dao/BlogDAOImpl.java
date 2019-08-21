@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pk.Model.Blog;
 
-@Repository("BlogDAO")
+@Repository //("BlogDAO")
 @Transactional
 public class BlogDAOImpl implements BlogDAO
 {

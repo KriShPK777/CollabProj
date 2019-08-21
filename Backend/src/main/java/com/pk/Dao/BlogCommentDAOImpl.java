@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pk.Model.BlogComment;
 
-@Repository("BlogCommentDAO")
+@Repository //("BlogCommentDAO")
 @Transactional
 public class BlogCommentDAOImpl implements BlogCommentDAO
 {

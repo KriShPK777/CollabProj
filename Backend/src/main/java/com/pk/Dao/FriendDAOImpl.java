@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pk.Model.Friend;
 import com.pk.Model.UserDetail;
 
-@Repository("FriendDAO")
+@Repository //("FriendDAO")
 @Transactional
 public class FriendDAOImpl implements FriendDAO 
 {
