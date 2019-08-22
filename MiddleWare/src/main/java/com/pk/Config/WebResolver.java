@@ -17,8 +17,8 @@ public class WebResolver
     {
     	System.out.println("==========View Resolver Bean Creation========");
     	InternalResourceViewResolver iResolver=new InternalResourceViewResolver();
-    	iResolver.setPrefix("/WEB-INF/jsp");
-    	iResolver.setSuffix(".jsp");
+    	iResolver.setPrefix("/WEB-INF/Views");
+    	iResolver.setSuffix(".html");
     	return iResolver;
     }
     @Bean(name="multipartResolver")
