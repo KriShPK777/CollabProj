@@ -17,7 +17,7 @@ public class WebResolver
     {
     	System.out.println("==========View Resolver Bean Creation========");
     	InternalResourceViewResolver iResolver=new InternalResourceViewResolver();
-    	iResolver.setPrefix("/WEB-INF/Views");
+    	iResolver.setPrefix("/WebContent/Views");
     	iResolver.setSuffix(".html");
     	return iResolver;
     }
