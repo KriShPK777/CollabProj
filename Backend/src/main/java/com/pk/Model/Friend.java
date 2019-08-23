@@ -17,7 +17,7 @@ public class Friend
 	@Id
 	 @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="friendidseq")
 	 int friendId;
-	 @JsonFormat(shape= JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
+
 	 String username;
 	 String friendusername;
 	 String status;

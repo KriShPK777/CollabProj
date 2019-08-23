@@ -39,10 +39,17 @@ public class ConfigDB
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
 		System.out.println("----Session Factory Object created-----");
-	    Class<?> classes[]=new Class[]{Blog.class,BlogComment.class,Friend.class,Job.class,Message.class,OutputMessage.class,ProfilePicture.class,UserDetail.class};
-		//lsf.addAnnotatedClass(Blog.class);
+	    //Class<?> classes[]=new Class[]{Blog.class,BlogComment.class,Friend.class,Job.class,Message.class,OutputMessage.class,ProfilePicture.class,UserDetail.class};
+		lsf.addAnnotatedClass(Blog.class);
+		lsf.addAnnotatedClass(BlogComment.class);
+		lsf.addAnnotatedClass(Friend.class);
+		lsf.addAnnotatedClass(Job.class);
+		lsf.addAnnotatedClass(Message.class);
+		lsf.addAnnotatedClass(OutputMessage.class);
+		lsf.addAnnotatedClass(ProfilePicture.class);
+		lsf.addAnnotatedClass(UserDetail.class);
 		
-	    return lsf.addAnnotatedClasses(classes).buildSessionFactory();
+	    return lsf.buildSessionFactory();
 	}
 	@Bean
 	public DataSource getDataSource() {
