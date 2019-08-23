@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pk.Model.Job;
 
-@Repository //("JobDAO")
+@Repository ("JobDAO")
 @Transactional
 public class JobDAOImpl implements JobDAO
 {

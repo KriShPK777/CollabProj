@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pk.Model.ProfilePicture;
 
-@Repository //("ProfilePictureDAO")
+@Repository ("ProfilePictureDAO")
 @Transactional
 public class ProfilePictureDAOImpl implements ProfilePictureDAO
 { 

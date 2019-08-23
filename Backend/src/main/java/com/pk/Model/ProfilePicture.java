@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Table
 public class ProfilePicture 
 {
-	@Id
+	
 	private String username;
 	private byte[] image;
 	public String getUsername() {
